@@ -1,0 +1,9 @@
+{
+    "name": "Minimal Edge",
+    "author": "Elhary",
+    "minAppVersion": "1.0.0",
+    "version": "1.0.0",
+    "repo": "https://github.com/Elhary/Obsidian-Minimal-Edge",
+    "screenshot": "image.png",
+    "modes": ["dark", "light"]
+}
