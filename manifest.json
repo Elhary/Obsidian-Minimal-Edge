@@ -4,6 +4,6 @@
     "minAppVersion": "1.0.0",
     "version": "1.0.0",
     "repo": "https://github.com/Elhary/Obsidian-Minimal-Edge",
-    "screenshot": "image.png",
+    "screenshot": "minimal-edge.png",
     "modes": ["dark", "light"]
 }
