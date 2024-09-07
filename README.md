@@ -4,10 +4,10 @@ A sleek and minimalist Obsidian theme designed for those who appreciate clean li
 
 
 
-![preview_img_1](./Image/Image1.png)
+![preview_img_1](./Image/image1.png)
 
 
-![preview_img_2](./Image/Image2.png)
+![preview_img_2](./Image/image2.png)
 
 
 
