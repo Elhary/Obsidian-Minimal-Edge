@@ -19,7 +19,7 @@ body {
     --background-modifier-error-rgb: 230, 135, 135;
     --background-modifier-error-hover: #d67474;
     --background-modifier-cover: rgba(0, 0, 0, 0.366);
-    --border-size: 1px solid #6e72796d;
+    --border-size: 1.7px solid #6e72796d;
     --code-background: #2f3039;
     --code-keyword: #de895b;
     --code-normal: #a8aeb0;
@@ -66,7 +66,7 @@ body {
     --background-modifier-error-rgb: 230, 135, 135;
     --background-modifier-error-hover: #FF9494;
     --background-modifier-cover: rgba(0, 0, 0, 0.8);
-    --border-size: 1px solid #796e6e6d;
+    --border-size: 1.7px solid #796e6e47;
     --code-background: #e2dcd5;
     --code-keyword: #de895b;
     --code-normal: #a8aeb0;
@@ -115,32 +115,30 @@ body {
 
 .workspace-leaf-content{
     border: var(--border-size);
-    border-top-left-radius:10px;
-    border-top-right-radius:10px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
 
+.workspace-tabs .workspace-leaf{
+    background-color: var(--background-primary);
 }
 
 .mod-root .workspace-leaf {
     margin: 20px;
     border-radius: 8px;
-    max-height: 720px;
-
 }
-
-.workspace-split.mod-root .view-content {
-    background: var(--background-secondary);
+.workspace-tabs .workspace-leaf .view-content,  .nav-header, .search-result-container.mod-global-search, .tag-container{
+    background-color: var(--background-secondary);
 }
-
-
-
 
 
 /* Tab */
 
 .workspace-tab-header.is-active {
     background-color: var(--tab-background-active);
+    border: var(--border-size);
+    box-shadow: none;
 }
-
 
 .theme-light .workspace-tab-header-container:not(.workspace-split) {
     align-items: center;
@@ -162,7 +160,6 @@ body {
 .mod-root:not(.mod-left-split):not(.mod-right-split) .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
     background-color: var(--background-secondary);
     height: 35px;
-    border: var(--border-size);
     border-radius: 5px;
     color: rgb(60, 60, 60);
     text-align: center !important;
@@ -202,22 +199,18 @@ body {
     gap: 5px;
 }
 
-
 .view-header-nav-buttons .clickable-icon {
     border: var(--border-size);
 }
-
 
 .view-header-title-container {
     border-left: var(--border-size);
     border-right: var(--border-size);
 }
 
-
 .mod-fade:not(.mod-at-end):after {
     background: transparent;
 }
-
 
 .status-bar {
     border: var(--border-size);
@@ -229,30 +222,27 @@ body {
 /* Ribbon */
 
 
-
 .workspace-ribbon {
-    max-height: 500px;
-    height: 500px;
+    height: 400px;
+    max-height: 600px;
     background-color: var(--background-secondary);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
 
-.workspace-split {
-    max-height: 800px;
+.side-dock-settings, .side-dock-actions{
+    margin-top: 25px;
+    gap: 15px;
 }
-
 
 .nav-header{
     border-bottom: var(--border-size);
     padding: 12px;
 }
 
-
-
+.nav-files-container{
+    background-color: var(--background-secondary);
+}
 .workspace-split.mod-horizontal {
     background-color: var(--background-primary);
     padding: 6px;
@@ -272,7 +262,6 @@ body {
 }
 
 .workspace-ribbon .sidebar-toggle-button {
-    position: fixed;
     top: 10%;
     height: 50px;
     background: var(--background-secondary);
@@ -298,7 +287,10 @@ body {
 body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
     position: relative;
     border: var(--border-size);
+    bottom: 30px;
+    border-radius: 10px;
     width: 100%;
+    padding: 15px;
 }
 
 .workspace-split.mod-left-split>.workspace-leaf-resize-handle,
@@ -306,6 +298,9 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
     border: none;
 }
 
+.is-hidden-frameless:not(.is-fullscreen) .workspace-tabs.mod-top-right-space .workspace-tab-header-container{
+    padding-right: -1px;
+}
 
 
 
@@ -438,6 +433,10 @@ select,
     background-color: var(--background-secondary);
 }
 
+.community-item{
+    border: var(--border-size);
+}
+
 body:not(.is-phone) .horizontal-tab-nav-item.is-active,
 body:not(.is-phone) .vertical-tab-nav-item.is-active {
     padding: 10px;
@@ -455,6 +454,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 
 .is-hidden-frameless:not(.is-fullscreen).is-focused .titlebar-button-container.mod-right {
     background-color: var(--background-primary);
+    cursor: pointer;
 }
 
 .is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right {
@@ -468,10 +468,3 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 .is-focused .titlebar-inner {
     color: var(--icon-color);
 }
-
-
-
-
-
-
-
