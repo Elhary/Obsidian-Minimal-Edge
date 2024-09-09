@@ -3,7 +3,6 @@
     "author": "Elhary",
     "minAppVersion": "1.0.0",
     "version": "1.0.0",
-    "repo": "https://github.com/Elhary/Obsidian-Minimal-Edge",
     "screenshot": "minimal-edge.png",
     "modes": ["dark", "light"]
 }
