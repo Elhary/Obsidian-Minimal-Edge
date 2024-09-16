@@ -22,6 +22,14 @@ A sleek and minimalist Obsidian theme designed for those who appreciate clean li
 - Click Manage next to Themes.
 - Search for "Minimal Edge" and select "Install and use"
 
+  
+## Support 
+
+If you enjoy my work, please consider supporting me.
+
+<a href="https://buymeacoffee.com/el_haris" target="_blank">
+<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" >
+</a>
 
 
 ## Feedback
