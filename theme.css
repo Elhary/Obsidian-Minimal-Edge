@@ -65,7 +65,7 @@ body {
     --background-modifier-error: #e68787;
     --background-modifier-error-rgb: 230, 135, 135;
     --background-modifier-error-hover: #FF9494;
-    --background-modifier-cover: rgba(0, 0, 0, 0.8);
+    --background-modifier-cover: rgba(0, 0, 0, 0.507);
     --border-size: 1.7px solid #796e6e47;
     --code-background: #e2dcd5;
     --code-keyword: #de895b;
@@ -102,6 +102,17 @@ body {
 
 }
 
+.theme-dark,
+.theme-light {
+    --code-keyword: #e37b68;
+    --code-normal: #b3a380;
+    --code-operator: #b89cdd;
+    --code-value: #e3b750;
+    --code-function: #dcbb59;
+    --code-property: #d29a8c;
+    --code-string: #05a3a3;
+}
+
 .theme-light .workspace,
 .theme-dark .workspace {
     background-color: var(--background-primary);
@@ -109,8 +120,8 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
-.workspace-split.mod-horizontal {
-    margin: 9px;
+.workspace-split.mod-horizontal,.mod-root .workspace-leaf  {
+    margin: 12px;
 }
 
 .workspace-leaf-content{
@@ -124,9 +135,11 @@ body {
 }
 
 .mod-root .workspace-leaf {
-    margin: 20px;
     border-radius: 8px;
+    margin-top: 14px;
+    transition: all 0.3 ease-in-out;
 }
+
 .workspace-tabs .workspace-leaf .view-content,  .nav-header, .search-result-container.mod-global-search, .tag-container{
     background-color: var(--background-secondary);
 }
@@ -177,9 +190,7 @@ body {
 
 
 .view-header {
-    display: flex;
     background-color: var(--background-secondary);
-    position: relative;
     border-bottom: var(--border-size);
 }
 
@@ -190,7 +201,6 @@ body {
 .view-header-left {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
 }
 
 .view-header-nav-buttons {
@@ -223,11 +233,12 @@ body {
 
 
 .workspace-ribbon {
-    height: 400px;
+    margin-top: 20px;
     max-height: 600px;
     background-color: var(--background-secondary);
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
+    margin-bottom:35px ;
 }
 
 .side-dock-settings, .side-dock-actions{
@@ -318,6 +329,7 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 
 .canvas-control-item {
     border-radius: 10px;
+    cursor: pointer;
     box-shadow: none;
     display: flex;
     border: var(--border-size);
@@ -326,7 +338,6 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
     color: var(--text-muted);
     background-color: var(--background-primary);
 }
-
 
 .canvas-control-group {
     box-shadow: none;
@@ -339,10 +350,17 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
     border: var(--border-size);
 }
 
-.canvas-card-menu {
+
+.canvas-card-menu .canvas-card-menu-button{
     background-color: var(--background-primary);
-    box-shadow: none;
+    margin: 10px;
     border: var(--border-size);
+    cursor: pointer;
+    border-radius: 10px;    
+}
+.canvas-card-menu {
+    background-color: transparent;
+    box-shadow: none;
 }
 
 .canvas-node-container {
@@ -359,6 +377,12 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 
 /* Graph */
 
+.graph-controls {
+    position: absolute;
+    border: var(--border-size);
+    padding: 0;
+    background-color: var(--background-primary);
+}
 
 .graph-controls.is-close {
     width: auto;
@@ -369,15 +393,8 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 .graph-controls:not(.is-close) {
     box-shadow: none;
     border: var(--border-size);
-
 }
 
-.graph-controls {
-    position: absolute;
-    border: var(--border-size);
-    padding: 0;
-    background-color: var(--background-primary);
-}
 
 
 
@@ -403,10 +420,34 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 
 
 
+
+
+.prompt{
+    animation: modalAnimation 0.1s ease-in;
+    border: var(--border-size);
+}
+
+input.prompt-input:hover, input.prompt-input:focus, input.prompt-input:focus-visible{
+    border-bottom: var(--border-size);
+}
+
+.prompt-instructions{
+    border-top: var(--border-size);
+}
+
 /* MODAL */
+
+
+
 
 .modal {
     border: var(--border-size);
+    animation: modalAnimation 0.1s ease-in;
+}
+
+.modal-bg{
+    background:var(--background-modifier-cover) !important;
+    backdrop-filter: blur(3px);
 }
 
 .modal.mod-settings .vertical-tab-header {
@@ -446,10 +487,18 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
     cursor: pointer;
 }
 
-
+@keyframes modalAnimation {
+    0% {
+      opacity: 0;
+      transform: translateX(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
 /* Titlebar */
-
 
 
 .is-hidden-frameless:not(.is-fullscreen).is-focused .titlebar-button-container.mod-right {
