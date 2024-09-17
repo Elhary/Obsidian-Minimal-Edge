@@ -7,11 +7,14 @@
 ![preview_img_1](./Image/image1.png)
 
 A sleek and minimalist Obsidian theme designed for those who appreciate clean lines and a focused workspace.
+
 If you like my work, feel free to support me by clicking the icons below!
 
 <a href="https://buymeacoffee.com/el_haris" target="_blank">
 <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 50px !important;width: 200px !important;" >
 </a>
+
+---
 
 
 ## Installation 
