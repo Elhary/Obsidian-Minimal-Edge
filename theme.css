@@ -1,3 +1,106 @@
+/* @settings
+name: Minimal Edge
+id: your-theme-id
+settings:
+  - 
+    id: background-theme
+    title: Background Theme
+    type: class-select
+    allowEmpty: false
+    default: default-theme
+    options:
+      - 
+        label: Default 
+        value: default-theme
+      - 
+        label: Warm 
+        value: warm-theme
+      - 
+        label: Eclipse 
+        value: eclipse-theme
+  - 
+    id: enable-modal-blur
+    title: Enable Modal Background Blur
+    description: Toggle blur effect on modal backgrounds
+    type: class-toggle
+    default: false
+  - 
+    id: modal-blur-amount
+    title: Modal Background Blur Amount
+    description: Set the blur amount for modal backgrounds (in pixels)
+    type: variable-number
+    default: 3
+    min: 0
+    max: 20
+    step: 1
+    format: px
+*/
+
+
+
+/* Light mode themes */
+body.theme-light.default-theme {
+    --background-primary: #e4ddd3;
+    --background-secondary: #EAE4DD;
+    --text-normal: #333;
+    --background-modifier-border: var(--border-size) solid #796e6e47;
+    
+}
+
+body.theme-light.warm-theme {
+    --background-primary: #f1dbc0  ;
+    --background-secondary: #faf0e8;
+    --text-normal: #705757;
+    --icon-color: #705757;
+    --text-muted: #6d5c5c;
+    --text-faint: #2d2121;
+    --text-accent: #a0662fdf;
+    --background-modifier-border: var(--border-size) solid #99755f;
+}
+
+body.theme-light.eclipse-theme {
+    --background-primary: #f6f6f6;
+    --background-secondary: #ffffff;
+    --text-normal: #494949;
+    --text-faint: #939393;
+    --text-accent: #1cb6ca;
+    --icon-color: #797c6d;
+    --background-modifier-border: var(--border-size) solid #9b9b9b;
+
+}
+
+/* Dark mode themes */
+body.theme-dark.default-theme {
+    --background-primary: #20242b;
+    --background-secondary: #252933;
+    --text-normal: #8f93a1;
+    --border-color:var(--border-size) solid ;
+
+}
+
+
+body.theme-dark.warm-theme {
+    --background-primary: #2a2420;
+    --background-secondary: #312b26;
+    --text-normal: #b3a59a;
+    --icon-color: #705757;
+    --text-accent: #c57021;
+    --background-modifier-border: var(--border-size) solid #554a40;
+
+
+}
+
+body.theme-dark.eclipse-theme {
+    --background-primary: #1a1c1d;
+    --background-secondary: #262729;
+    --text-normal: #a6a8aa;
+    --text-faint: #ffffff;
+    --text-accent: #1cb6ca;
+    --icon-color: #a6a6a6;
+    --background-modifier-border: var(--border-size) solid #424242;
+
+}
+
 body {
     --icon-size: 18px;
     --icon-stroke: 2.2px;
@@ -6,6 +109,10 @@ body {
     --ribbon-width: 60px;
     --ribbon-padding: 10px;
     --tab-curve: 0px;
+    --border-size: 1.7px;
+    --custom-border-color: var(--border-color);
+    --custom-border-size: calc(var(--border-size) * 1px);
+    --custom-border: var(--border-size) solid var(--border-color);
 }
 
 
@@ -19,7 +126,7 @@ body {
     --background-modifier-error-rgb: 230, 135, 135;
     --background-modifier-error-hover: #d67474;
     --background-modifier-cover: rgba(0, 0, 0, 0.366);
-    --border-size: 1.7px solid #6e72796d;
+    --background-modifier-border: var(--border-size) solid #6e72796d;
     --code-background: #2f3039;
     --code-keyword: #de895b;
     --code-normal: #a8aeb0;
@@ -59,14 +166,13 @@ body {
     --background-primary: #e4ddd3;
     --background-primary-alt: #EAE4DD;
     --background-secondary: #EAE4DD;
-    --background-modifier-border: #dbdbdc;
+    --background-modifier-border: var(--border-size) solid #000;
     --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
     --background-modifier-success: #A4E7C3;
     --background-modifier-error: #e68787;
     --background-modifier-error-rgb: 230, 135, 135;
     --background-modifier-error-hover: #FF9494;
     --background-modifier-cover: rgba(0, 0, 0, 0.507);
-    --border-size: 1.7px solid #796e6e47;
     --code-background: #e2dcd5;
     --code-keyword: #de895b;
     --code-normal: #a8aeb0;
@@ -99,18 +205,14 @@ body {
     --scrollbar-bg: #F7EED3;
     --scrollbar-thumb-bg: #c6bfa94e;
     --panel-border-color: #dbdbdc;
-
 }
 
-.theme-dark,
-.theme-light {
-    --code-keyword: #e37b68;
-    --code-normal: #b3a380;
-    --code-operator: #b89cdd;
-    --code-value: #e3b750;
-    --code-function: #dcbb59;
-    --code-property: #d29a8c;
-    --code-string: #05a3a3;
+
+.workspace-leaf-content,
+.nav-header,
+.search-result-container.mod-global-search,
+.tag-container {
+    background-color: var(--background-secondary);
 }
 
 .theme-light .workspace,
@@ -125,7 +227,7 @@ body {
 }
 
 .workspace-leaf-content{
-    border: var(--border-size);
+    border: var(--background-modifier-border);
     border-radius: 10px;
     margin-bottom: 50px;
 }
@@ -149,7 +251,7 @@ body {
 
 .workspace-tab-header.is-active {
     background-color: var(--tab-background-active);
-    border: var(--border-size);
+    border: var(--background-modifier-border);
     box-shadow: none;
 }
 
@@ -191,7 +293,7 @@ body {
 
 .view-header {
     background-color: var(--background-secondary);
-    border-bottom: var(--border-size);
+    border-bottom: var(--background-modifier-border);
 }
 
 .is-focused .workspace-leaf.mod-active .view-header {
@@ -210,12 +312,12 @@ body {
 }
 
 .view-header-nav-buttons .clickable-icon {
-    border: var(--border-size);
+    border: var(--background-modifier-border);
 }
 
 .view-header-title-container {
-    border-left: var(--border-size);
-    border-right: var(--border-size);
+    border-left: var(--background-modifier-border);
+    border-right: var(--background-modifier-border);
 }
 
 .mod-fade:not(.mod-at-end):after {
@@ -223,7 +325,7 @@ body {
 }
 
 .status-bar {
-    border: var(--border-size);
+    border: var(--background-modifier-border);
 }
 
 
@@ -247,7 +349,7 @@ body {
 }
 
 .nav-header{
-    border-bottom: var(--border-size);
+    border-bottom: var(--background-modifier-border);
     padding: 12px;
 }
 
@@ -263,9 +365,9 @@ body {
 .workspace-ribbon.mod-left {
     background-color: var(--background-secondary);
     margin-top: 10%;
-    border-right: var(--border-size);
-    border-bottom: var(--border-size);
-    border-top: var(--border-size);
+    border-right:var(--background-modifier-border);
+    border-bottom: var(--background-modifier-border);
+    border-top: var(--background-modifier-border);
 }
 
 .workspace-ribbon.mod-left:before {
@@ -276,9 +378,9 @@ body {
     top: 10%;
     height: 50px;
     background: var(--background-secondary);
-    border-right: var(--border-size);
-    border-bottom: var(--border-size);
-    border-top: var(--border-size);
+    border-right: var(--background-modifier-border);
+    border-bottom: var(--background-modifier-border);
+    border-top: var(--background-modifier-border);
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     margin-bottom: 50px;
@@ -292,12 +394,12 @@ body {
 .mod-left-split .workspace-tab-header,
 .mod-right-split .workspace-tab-header {
     padding: 9px 6px;
-    border: var(--border-size);
+    border: var(--background-modifier-border);
 }
 
 body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
     position: relative;
-    border: var(--border-size);
+    border:var(--background-modifier-border);
     bottom: 30px;
     border-radius: 10px;
     width: 100%;
@@ -332,10 +434,10 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
     cursor: pointer;
     box-shadow: none;
     display: flex;
-    border: var(--border-size);
+    border: var(--background-modifier-border);
     margin-bottom: 10px;
     z-index: 10;
-    color: var(--text-muted);
+    color: var(--icon-color);
     background-color: var(--background-primary);
 }
 
@@ -347,16 +449,18 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 
 
 .canvas-control-item:last-child {
-    border: var(--border-size);
+    border: var(--background-modifier-border);
 }
 
 
 .canvas-card-menu .canvas-card-menu-button{
     background-color: var(--background-primary);
     margin: 10px;
-    border: var(--border-size);
+    border: var(--background-modifier-border);
     cursor: pointer;
     border-radius: 10px;    
+    color: var(--icon-color);
+
 }
 .canvas-card-menu {
     background-color: transparent;
@@ -365,21 +469,19 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 
 .canvas-node-container {
     box-shadow: none;
-    border: var(--border-size);
+    border: var(--background-modifier-border);
 }
 
 .canvas-menu {
-    border: var(--border-size);
+    border: var(--background-modifier-border);
 }
-
-
 
 
 /* Graph */
 
 .graph-controls {
     position: absolute;
-    border: var(--border-size);
+    border: var(--background-modifier-border);
     padding: 0;
     background-color: var(--background-primary);
 }
@@ -387,12 +489,12 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 .graph-controls.is-close {
     width: auto;
     background-color: var(--background-primary);
-    border: var(--border-size);
+    border: var(--background-modifier-border);
 }
 
 .graph-controls:not(.is-close) {
     box-shadow: none;
-    border: var(--border-size);
+    border: var(--background-modifier-border);
 }
 
 
@@ -402,18 +504,18 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 /* Menu */
 
 .menu {
-    border-radius: var(--border-size);
+    border-radius:var(--background-modifier-border);;
     box-shadow: none;
     overflow: hidden;
 }
 
 .menu {
-    border: var(--border-size);
+    border: var(--background-modifier-border);
     background-color: var(--background-primary);
 }
 
 .menu-separator {
-    border-bottom: var(--border-size);
+    border-bottom:var(--background-modifier-border);
 }
 
 
@@ -424,15 +526,16 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 
 .prompt{
     animation: modalAnimation 0.1s ease-in;
-    border: var(--border-size);
+    border: var(--background-modifier-border);
 }
 
 input.prompt-input:hover, input.prompt-input:focus, input.prompt-input:focus-visible{
-    border-bottom: var(--border-size);
+    border-bottom: var(--background-modifier-border);
 }
 
 .prompt-instructions{
-    border-top: var(--border-size);
+    border-top: var(--background-modifier-border);
+    color: var(--text-muted);
 }
 
 /* MODAL */
@@ -441,17 +544,19 @@ input.prompt-input:hover, input.prompt-input:focus, input.prompt-input:focus-vis
 
 
 .modal {
-    border: var(--border-size);
+    border: var(--background-modifier-border);
     animation: modalAnimation 0.1s ease-in;
 }
 
-.modal-bg{
-    background:var(--background-modifier-cover) !important;
-    backdrop-filter: blur(3px);
+.modal-bg {
+    background: var(--background-modifier-cover) !important;
 }
 
+body.enable-modal-blur .modal-bg {
+    backdrop-filter: blur(var(--modal-blur-amount));
+}
 .modal.mod-settings .vertical-tab-header {
-    border-right: var(--border-size);
+    border-right: var(--background-modifier-border);
 }
 
 .vertical-tab-header {
@@ -459,7 +564,7 @@ input.prompt-input:hover, input.prompt-input:focus, input.prompt-input:focus-vis
 }
 
 .setting-item {
-    border-top: var(--border-size);
+    border-top: 1px solid var(--text-muted);
 }
 
 .horizontal-tab-nav-item,
@@ -469,20 +574,23 @@ input.prompt-input:hover, input.prompt-input:focus, input.prompt-input:focus-vis
 
 }
 
+.search-input-container input{
+    border: var(--background-modifier-border);
+}
 select,
 .dropdown {
     background-color: var(--background-secondary);
 }
 
 .community-item{
-    border: var(--border-size);
+    border: var(--background-modifier-border);
 }
 
 body:not(.is-phone) .horizontal-tab-nav-item.is-active,
 body:not(.is-phone) .vertical-tab-nav-item.is-active {
     padding: 10px;
     background-color: var(--background-primary);
-    border: var(--border-size);
+    border: var(--background-modifier-border);
     color: var(--text-faint);
     cursor: pointer;
 }
