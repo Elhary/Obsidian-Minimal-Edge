@@ -17,6 +17,13 @@ If you like my work, feel free to support me by clicking the icons below!
 ---
 
 
+## Style Settings
+
+It is highly recommended to install the Style Settings plugin, which allows you to change the theme and customize various settings. Please note that this is still in development.
+
+
+
+
 ## Installation 
 
 - Open Settings 
@@ -24,9 +31,10 @@ If you like my work, feel free to support me by clicking the icons below!
 - Click Manage next to Themes.
 - Search for "Minimal Edge" and select "Install and use"
 
+
+
   
 ## Feedback
 
 If you have any issues or suggestions, please  [submit an issue](https://github.com/Elhary/Obsidian-Minimal-Edge/issues) or raise a  [pull request](https://github.com/Elhary/Obsidian-Minimal-Edge/pulls).
-
 
