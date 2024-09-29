@@ -28,6 +28,8 @@ settings:
       - 
         label: Eclipse 
         value: eclipse-theme
+
+
   - 
 
     id: border-style
@@ -85,7 +87,7 @@ settings:
     default: true
   -
 
-    id: ribbon-style
+    id: ribbon settings
     title: Ribbon Style
     type: heading
     level: 2
@@ -105,13 +107,20 @@ settings:
       - 
         label: Box
         value: ribbon-box-style
-  - 
+      -
+        label: Edge
+        value: ribbon-edge-style
+
+  -
+
     id: support header
     title:  Support
     type: heading
     level: 1
     collapsed: false
+
   -
+   
     id: minimal-edge-support
     level: 2
     type: info-text
@@ -133,7 +142,7 @@ body.theme-light.default-theme {
 }
 
 body.theme-light.warm-theme {
-    --background-primary: #eedec9;
+    --background-primary: #eeddc9;
     --background-secondary: #faf0e8;
     --text-normal: #705757;
     --icon-color: #705757;
@@ -168,6 +177,8 @@ body.theme-light.eclipse-theme {
     --code-property: #d29a8c;
     --code-string: #05a36e;
 }
+
+
 
 /* Dark mode themes */
 body.theme-dark.default-theme {
@@ -226,6 +237,13 @@ body {
     --custom-border-size: calc(var(--border-size) * 1px);
     --custom-border: var(--border-size) var(--border-style);
     --modal-animation: modalAnimation 0.1s ease-in;
+    --font-family: 'Courier New', Courier, monospace;
+}
+
+
+body.font-style {
+    font-family: var(--font-family);
+    font-family: sans-serif;
 }
 
 body:not(.enable-borders) * {
@@ -263,6 +281,11 @@ body.enable-modal-animation .prompt {
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+.workspace-ribbon.mod-left.is-collapsed,
+.workspace-ribbon.mod-left {
+    margin-top: 12%;
 }
 
 /* Ribbon Style One */
@@ -331,6 +354,38 @@ body.ribbon-default-style .workspace-ribbon .sidebar-toggle-button {
     margin-bottom: 50px;
 }
 
+
+
+/* Ribbon Style Three */
+
+body.ribbon-edge-style .workspace-ribbon {
+    position: relative;
+    margin: 10px;
+    max-height: 600px;
+    background-color: var(--background-secondary);
+    border: var(--background-modifier-border);
+    border-radius: var(--border-radius);
+}
+
+body.ribbon-edge-style .side-dock-settings,
+.side-dock-actions {
+    margin-top: 95px;
+    gap: 15px;
+}
+
+body.ribbon-edge-style .workspace-ribbon.mod-left.is-collapsed,
+body.ribbon-edge-style .workspace-ribbon.mod-left {
+    background-color: var(--background-secondary);
+    margin-top: 8%;
+    border: var(--background-modifier-border);
+}
+
+body.ribbon-edge-style .workspace-ribbon .sidebar-toggle-button {
+    height: 50px;
+    background: var(--background-secondary);
+    border-bottom: var(--background-modifier-border);
+    margin-bottom: 50px;
+}
 
 
 
@@ -451,7 +506,8 @@ body.ribbon-default-style .workspace-ribbon .sidebar-toggle-button {
 .theme-dark .workspace {
     background-color: var(--background-primary);
     display: flex;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--font-family);
+
 }
 
 .workspace-split.mod-horizontal,
@@ -778,9 +834,15 @@ body.enable-modal-blur .modal-bg {
 }
 
 select,
+button,
 .dropdown {
     background-color: var(--background-secondary);
     border: var(--background-modifier-border);
+}
+
+
+button:not(.clickable-icon) {
+    box-shadow: none;
 }
 
 .community-item {
