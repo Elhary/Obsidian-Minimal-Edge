@@ -40,11 +40,11 @@ settings:
 
   -
 
-    id: enable-borders
-    title: Enable Borders
+    id: disable-border
+    title: Disable Borders
     description: Toggle borders on or off
     type: class-toggle
-    default: true
+    default: false
   - 
     id: border-radius
     title: Border Radius
@@ -240,15 +240,11 @@ body {
     --font-family: 'Courier New', Courier, monospace;
 }
 
-
-body.font-style {
-    font-family: var(--font-family);
-    font-family: sans-serif;
-}
-
-body:not(.enable-borders) * {
+body.disable-border * {
     border: none !important;
 }
+
+
 
 .modal-bg {
     background: var(--background-modifier-cover);
@@ -445,7 +441,7 @@ body.ribbon-edge-style .workspace-ribbon .sidebar-toggle-button {
     --background-primary: #e4ddd3;
     --background-primary-alt: #EAE4DD;
     --background-secondary: #EAE4DD;
-    --background-modifier-border: var(--border-size) solid #000;
+    --background-modifier-border: var(--border-size) solid #796e6e47;
     --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
     --background-modifier-success: #A4E7C3;
     --background-modifier-error: #e68787;
@@ -644,7 +640,10 @@ body.ribbon-edge-style .workspace-ribbon .sidebar-toggle-button {
     display: none;
 }
 
+.workspace-ribbon .sidebar-toggle-button{
+    margin-top: 1em;
 
+}
 
 .mod-left-split .workspace-tab-header-container-inner,
 .mod-right-split .workspace-tab-header-container-inner {
