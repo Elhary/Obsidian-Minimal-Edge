@@ -324,7 +324,6 @@ body.theme-light.default-theme {
     --table-border-color:#796e6e47;
     --canvas-dot-pattern:#796e6e47;
 
-
 }
 
 
@@ -899,6 +898,11 @@ body.titlebar-vintage-style .titlebar .mod-minimize:hover {
     border-radius: var(--border-radius);
 }
 
+
+.workspace-leaf-content[data-type='file-explorer'], [data-type='search'], [data-type='bookmarks']  {
+    margin-bottom: 29px;  
+}
+
 .theme-light .workspace,
 .theme-dark .workspace {
     background-color: var(--background-primary);
@@ -913,7 +917,9 @@ body.titlebar-vintage-style .titlebar .mod-minimize:hover {
 
 .workspace-leaf-content {
     border: var(--background-modifier-border);
-    margin-bottom: 50px;
+    margin-bottom: 13px;
+
+    
 }
 
 .workspace-tabs .workspace-leaf {
@@ -921,7 +927,7 @@ body.titlebar-vintage-style .titlebar .mod-minimize:hover {
 }
 
 .mod-root .workspace-leaf {
-    margin: 11px;
+    margin: 5px 20px;
 }
 
 .workspace-tabs .workspace-leaf .view-content,
@@ -935,11 +941,6 @@ body.titlebar-vintage-style .titlebar .mod-minimize:hover {
 /* Tab */
 
 
-
-
-.workspace-tab-header:hover{
-    display: block;
-}
 .workspace-tab-header.is-active {
     background-color: var(--tab-background-active);
     border: var(--background-modifier-border);
@@ -1132,7 +1133,7 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
     position: relative;
     border: var(--background-modifier-border);
     border-radius: var(--border-radius);
-    bottom: 2.8em;
+    bottom: 1.1em;
     width: 100%;
     padding: 15px;
 }
