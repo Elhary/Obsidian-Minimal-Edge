@@ -2,23 +2,20 @@
 name: Minimal Edge
 id: minimal-edge-settings
 settings:
-  -
-
+  - 
     id: main-theme
     title: Interface
     type: heading
     level: 2
     collapsed: true
 
-
-  -
+  - 
     id: background-theme
     title: Themes
     type: class-select
     allowEmpty: false
     default: default-theme
     options:
-
       - 
         label: Default 
         value: default-theme
@@ -28,50 +25,67 @@ settings:
       - 
         label: Eclipse 
         value: eclipse-theme
-
-      -
+      - 
         label: Vintage 
         value: vintage-theme 
 
-  -
-
+  - 
     id: titlebar-button-style
-    title:  Titlebar Button Style
+    title: Titlebar Button Style
     type: class-select
     allowEmpty: false
-    default: titlebar-defualt-style
+    default: titlebar-default-style
     options:
-
-      -
-
-        label: Defualt 
-        value: titlebar-defualt-style
+      - 
+        label: Default 
+        value: titlebar-default-style
       - 
         label: Minimal 
         value: titlebar-minimal-style
       - 
         label: Retro 
         value: titlebar-retro-style
-      -
+      - 
         label: Vintage 
         value: titlebar-vintage-style
- 
 
   - 
-
+    id: font-style
+    title: Body Text Font
+    description: Choose the font family for your main text
+    type: variable-select
+    default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
+    options:
+      - 
+        label: System Default
+        value: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
+      - 
+        label: Cursive
+        value: cursive
+      - 
+        label: Helvetica
+        value: Helvetica, Arial, sans-serif
+      - 
+        label: Georgia
+        value: Georgia, serif
+      - 
+        label: Monospace
+        value: monospace
+    
+  - 
     id: border-style
     title: Border Style
     type: heading
     level: 2
     collapsed: true
 
-  -
-
+  - 
     id: disable-border
     title: Disable Borders
     description: Toggle borders on or off
     type: class-toggle
     default: false
+
   - 
     id: border-radius
     title: Border Radius
@@ -82,20 +96,21 @@ settings:
     max: 20
     step: 1
     format: px
-  - 
 
-    id: modal_settings
+  - 
+    id: modal-settings
     title: Modal Settings
     type: heading
     level: 2
     collapsed: true
 
-  -
+  - 
     id: enable-modal-blur
     title: Enable Modal Background Blur
     description: Toggle blur effect on modal backgrounds
     type: class-toggle
     default: true
+
   - 
     id: modal-blur-amount
     title: Modal Background Blur Amount
@@ -106,66 +121,54 @@ settings:
     max: 10
     step: 1
     format: px
+
   - 
     id: enable-modal-animation 
     title: Enable Modal Animation
     description: Toggle to turn off the modal animation
     type: class-toggle
     default: true
-  -
 
-    id: ribbon settings
+  - 
+    id: ribbon-settings
     title: Ribbon Style
     type: heading
     level: 2
     collapsed: true
 
-  -
-
+  - 
     id: ribbon-style
     title: Ribbon Style
     type: class-select
     allowEmpty: false
     default: ribbon-default-style
     options:
-      -
+      - 
         label: Default
         value: ribbon-default-style
       - 
         label: Box
         value: ribbon-box-style
-      -
+      - 
         label: Edge
         value: ribbon-edge-style
 
-  -
-  
-
-    id: support header
-    title:  Support
+  - 
+    id: support-header
+    title: Support
     type: heading
     level: 1
     collapsed: false
 
-  -
-   
+  - 
     id: minimal-edge-support
     level: 2
     type: info-text
     markdown: true
-    description:     
-     'If you enjoy my work, consider supporting me by clicking the icons below! Your support helps me develop more features and settings in the future.
+    description: >
+      If you enjoy my work, consider supporting me by [buying me a coffee](https://buymeacoffee.com/el_haris) or starring the project on [GitHub](https://github.com/Elhary/Obsidian-Minimal-Edge). Your support is greatly appreciated!
 
-
-      [![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/el_haris)'
-      
 */
-
-
-
-
-
-
 
 
 /* Light Mode Themes Styles */
@@ -173,13 +176,14 @@ settings:
 
 /* Vintage Theme -  Light Mode*/
 
+
 body.theme-light.vintage-theme {
     --background-primary: #ead6c7;
     --background-secondary: #f7f0e9;
     --text-normal: #333;
-    --icon-color:#a0662fb7;
-    --icon-color-focused:#7a4a1db7;
-    --tab-text-color-focused-active-current:#7a4a1db7;
+    --icon-color: #a0662fb7;
+    --icon-color-focused: #7a4a1db7;
+    --tab-text-color-focused-active-current: #7a4a1db7;
     --background-modifier-border: var(--border-size) var(--border-style) #2c242447;
     --code-background: #544d3e;
     --code-keyword: #FFAD60;
@@ -189,49 +193,58 @@ body.theme-light.vintage-theme {
     --code-function: #dcbb59;
     --code-property: #d29a8c;
     --code-string: #79b1c7;
-    --hr-color:#2c242447;
-    --table-border-color:#2c242447;
-    --canvas-dot-pattern:#796e6e47;
+    --hr-color: #2c242447;
+    --table-border-color: #2c242447;
+    --canvas-dot-pattern: #796e6e47;
 }
 
 
-body.theme-light.vintage-theme .workspace-ribbon .sidebar-toggle-button .clickable-icon{
-    color:#534e3d 
+body.theme-light.vintage-theme .workspace-ribbon .sidebar-toggle-button .clickable-icon {
+    color: #534e3d
 }
-body.theme-light.vintage-theme .clickable-icon:nth-child(4n + 1){
+
+body.theme-light.vintage-theme .clickable-icon:nth-child(4n + 1) {
     color: #ec9b4e;
 }
-body.theme-light.vintage-theme .clickable-icon:nth-child(4n + 2){
+
+body.theme-light.vintage-theme .clickable-icon:nth-child(4n + 2) {
     color: #fc7a39;
 }
-body.theme-light.vintage-theme .clickable-icon:nth-child(4n + 3){
+
+body.theme-light.vintage-theme .clickable-icon:nth-child(4n + 3) {
     color: #ffa047;
 }
-body.theme-light.vintage-theme .clickable-icon:nth-child(4n + 4){
-    color: #529dbb;
-}
-body.theme-light.vintage-theme .canvas-control-item:nth-child(4n + 1){
-    color: #534e3d;
-}
-body.theme-light.vintage-theme .canvas-control-item:nth-child(4n + 2){
-    color: #fc7a39;
-}
-body.theme-light.vintage-theme .canvas-control-item:nth-child(4n + 3){
-    color: #ffa047;
-}
-body.theme-light.vintage-theme .canvas-control-item:nth-child(4n + 4){
+
+body.theme-light.vintage-theme .clickable-icon:nth-child(4n + 4) {
     color: #529dbb;
 }
 
-body.theme-light.vintage-theme .nav-file-tag{
+body.theme-light.vintage-theme .canvas-control-item:nth-child(4n + 1) {
+    color: #534e3d;
+}
+
+body.theme-light.vintage-theme .canvas-control-item:nth-child(4n + 2) {
+    color: #fc7a39;
+}
+
+body.theme-light.vintage-theme .canvas-control-item:nth-child(4n + 3) {
+    color: #ffa047;
+}
+
+body.theme-light.vintage-theme .canvas-control-item:nth-child(4n + 4) {
+    color: #529dbb;
+}
+
+body.theme-light.vintage-theme .nav-file-tag {
     background-color: #ffa04763;
     color: #7e7e7e86;
 }
-body.theme-light.vintage-theme input[type=checkbox]{
+
+body.theme-light.vintage-theme input[type=checkbox] {
     border: var(--background-modifier-border);
 }
 
-body.theme-light.vintage-theme input[type=checkbox]:checked{
+body.theme-light.vintage-theme input[type=checkbox]:checked {
     background-color: #529dbb;
 }
 
@@ -245,10 +258,10 @@ body.theme-dark.vintage-theme {
     --background-secondary: #41352a;
     --text-normal: #c2b8ac;
     --text-accent: #a0662fdf;
-    --icon-color:#a0662f9c;
-    --icon-color-focused:#965e29e1;
-    --tab-text-color-focused-active-current:#965e29e1;
-    --interactive-normal:#291f18;
+    --icon-color: #a0662f9c;
+    --icon-color-focused: #965e29e1;
+    --tab-text-color-focused-active-current: #965e29e1;
+    --interactive-normal: #291f18;
     --background-modifier-border: var(--border-size) var(--border-style) #b9979747;
     --code-background: #27231a;
     --code-keyword: #FFAD60;
@@ -258,53 +271,64 @@ body.theme-dark.vintage-theme {
     --code-function: #dcbb59;
     --code-property: #d29a8c;
     --code-string: #79b1c7;
-    --hr-color:#b9979747;
-    --table-border-color:#b9979747;
-    --canvas-dot-pattern:#965e29e1;
+    --hr-color: #b9979747;
+    --table-border-color: #b9979747;
+    --canvas-dot-pattern: #965e29e1;
 
-    
+
+
 }
 
 
-body.theme-dark.vintage-theme .workspace-ribbon .sidebar-toggle-button .clickable-icon{
-    color:#F2E5BF 
+body.theme-dark.vintage-theme .workspace-ribbon .sidebar-toggle-button .clickable-icon {
+    color: #F2E5BF
 }
 
-body.theme-dark.vintage-theme .clickable-icon:nth-child(4n + 1){
+body.theme-dark.vintage-theme .clickable-icon:nth-child(4n + 1) {
     color: #FFAD60;
 }
-body.theme-dark.vintage-theme .clickable-icon:nth-child(4n + 2){
+
+body.theme-dark.vintage-theme .clickable-icon:nth-child(4n + 2) {
     color: #FD8B51;
 }
-body.theme-dark.vintage-theme .clickable-icon:nth-child(4n + 3){
+
+body.theme-dark.vintage-theme .clickable-icon:nth-child(4n + 3) {
     color: #FFAD60;
 }
-body.theme-dark.vintage-theme .clickable-icon:nth-child(4n + 4){
+
+body.theme-dark.vintage-theme .clickable-icon:nth-child(4n + 4) {
     color: #79b1c7;
 }
-body.theme-dark.vintage-theme .canvas-control-item:nth-child(4n + 1){
+
+body.theme-dark.vintage-theme .canvas-control-item:nth-child(4n + 1) {
     color: #F2E5BF;
 }
-body.theme-dark.vintage-theme .canvas-control-item:nth-child(4n + 2){
-    color: #FFAD60;
-}
-body.theme-dark.vintage-theme .canvas-control-item:nth-child(4n + 3){
-    color: #FD8B51;
-}
-body.theme-dark.vintage-theme .canvas-control-item:nth-child(4n + 4){
-    color: #79b1c7;
-}
-body.theme-dark.vintage-theme .canvas-card-menu .canvas-card-menu-button:nth-child(1){
-    color: #F2E5BF;
-}
-body.theme-dark.vintage-theme .canvas-card-menu .canvas-card-menu-button:nth-child(2){
-    color: #FD8B51;
-}
-body.theme-dark.vintage-theme .canvas-card-menu .canvas-card-menu-button:nth-child(3){
+
+body.theme-dark.vintage-theme .canvas-control-item:nth-child(4n + 2) {
     color: #FFAD60;
 }
 
-body.theme-dark.vintage-theme .nav-file-tag{
+body.theme-dark.vintage-theme .canvas-control-item:nth-child(4n + 3) {
+    color: #FD8B51;
+}
+
+body.theme-dark.vintage-theme .canvas-control-item:nth-child(4n + 4) {
+    color: #79b1c7;
+}
+
+body.theme-dark.vintage-theme .canvas-card-menu .canvas-card-menu-button:nth-child(1) {
+    color: #F2E5BF;
+}
+
+body.theme-dark.vintage-theme .canvas-card-menu .canvas-card-menu-button:nth-child(2) {
+    color: #FD8B51;
+}
+
+body.theme-dark.vintage-theme .canvas-card-menu .canvas-card-menu-button:nth-child(3) {
+    color: #FFAD60;
+}
+
+body.theme-dark.vintage-theme .nav-file-tag {
     background-color: #5f514463;
     color: #7e7e7e86;
 }
@@ -317,12 +341,12 @@ body.theme-dark.vintage-theme .nav-file-tag{
 body.theme-light.default-theme {
     --background-primary: #e4ddd3;
     --background-secondary: #EAE4DD;
-    --interactive-normal:#f1ece5;
+    --interactive-normal: #f1ece5;
     --text-normal: #333;
     --background-modifier-border: var(--border-size) var(--border-style) #796e6e47;
-    --hr-color:#796e6e47;
-    --table-border-color:#796e6e47;
-    --canvas-dot-pattern:#796e6e47;
+    --hr-color: #796e6e47;
+    --table-border-color: #796e6e47;
+    --canvas-dot-pattern: #796e6e47;
 
 }
 
@@ -346,7 +370,7 @@ body.theme-light.warm-theme {
     --code-function: #dcbb59;
     --code-property: #d29a8c;
     --code-string: #05a36e;
-    --canvas-dot-pattern:#70575777;
+    --canvas-dot-pattern: #70575777;
 
 
 }
@@ -369,10 +393,10 @@ body.theme-light.eclipse-theme {
     --code-function: #dcbb59;
     --code-property: #d29a8c;
     --code-string: #05a36e;
-    --nav-item-background-active:   --background-modifier-border: var(--border-size) var(--border-style) #9b9b9b84;
-    --hr-color:#b9979747;
-    --table-border-color:#9b9b9b84;
-    --canvas-dot-pattern:#4949498b;
+    --nav-item-background-active: --background-modifier-border: var(--border-size) var(--border-style) #9b9b9b84;
+    --hr-color: #b9979747;
+    --table-border-color: #9b9b9b84;
+    --canvas-dot-pattern: #4949498b;
 
 }
 
@@ -384,9 +408,9 @@ body.theme-dark.default-theme {
     --background-secondary: #252933;
     --text-normal: #919191;
     --border-color: var(--border-size) var(--border-style);
-    --hr-color:#6e72796d;
-    --table-border-color:#6e72796d;
-    --canvas-dot-pattern:#4f5a77;
+    --hr-color: #6e72796d;
+    --table-border-color: #6e72796d;
+    --canvas-dot-pattern: #4f5a77;
 
 }
 
@@ -399,7 +423,7 @@ body.theme-dark.warm-theme {
     --text-normal: #b3a59a;
     --icon-color: #705757;
     --text-accent: #c57021;
-    --interactive-normal:#2a2420;
+    --interactive-normal: #2a2420;
     --background-modifier-border: var(--border-size) var(--border-style) #554a40;
     --code-background: #251e19;
     --code-keyword: #de895b;
@@ -409,9 +433,9 @@ body.theme-dark.warm-theme {
     --code-function: #dcbb59;
     --code-property: #d29a8c;
     --code-string: #05a36e;
-    --hr-color:#554a40;
-    --table-border-color:#554a40;
-    --canvas-dot-pattern:#705757;
+    --hr-color: #554a40;
+    --table-border-color: #554a40;
+    --canvas-dot-pattern: #705757;
 
 }
 
@@ -434,9 +458,9 @@ body.theme-dark.eclipse-theme {
     --code-function: #dcbb59;
     --code-property: #d29a8c;
     --code-string: #05a36e;
-    --hr-color:#424242;
-    --table-border-color:#424242;
-    --canvas-dot-pattern:#4f5a77;
+    --hr-color: #424242;
+    --table-border-color: #424242;
+    --canvas-dot-pattern: #4f5a77;
 }
 
 
@@ -455,9 +479,19 @@ body {
     --custom-border-size: calc(var(--border-size) * 1px);
     --custom-border: var(--border-size) var(--border-style);
     --modal-animation: modalAnimation 0.1s ease-in;
-    --font-family: 'Courier New', Courier, monospace;
     --ribbon-box-style-margin: 11%;
-    --box-style-sidebar-toggle-button-height:58px;
+    --box-style-sidebar-toggle-button-height: 58px;
+    --font-style: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+body {
+    font-family: var(--font-style);
+
+}
+
+.cm-contentContainer {
+    font-family: var(--font-style);
 }
 
 body.disable-border * {
@@ -642,13 +676,13 @@ body.titlebar-vintage-style.mod-windows .titlebar-button {
 
 body.titlebar-retro-style.mod-windows .titlebar-button:hover,
 body.titlebar-minimal-style.mod-windows .titlebar-button:hover,
-body.titlebar-vintage-style.mod-windows .titlebar-button:hover{
+body.titlebar-vintage-style.mod-windows .titlebar-button:hover {
     padding: 8px;
 }
 
 body.titlebar-retro-style.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right,
 body.titlebar-minimal-style.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right,
-body.titlebar-vintage-style.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right{
+body.titlebar-vintage-style.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right {
     background-color: var(--background-primary);
     gap: 10px;
     margin: 12px;
@@ -781,10 +815,6 @@ body.titlebar-vintage-style .titlebar .mod-minimize:hover {
 }
 
 
-
-
-
-
 /* default theme styling */
 
 .theme-dark {
@@ -795,7 +825,7 @@ body.titlebar-vintage-style .titlebar .mod-minimize:hover {
     --background-modifier-success: #55af7f;
     --background-modifier-error: rgb(163, 82, 82);
     --background-modifier-error-rgb: 230, 135, 135;
-    --background-modifier-error-hover: #d67474;
+    --background-modifier-error-hover: #b35454;
     --background-modifier-cover: rgba(0, 0, 0, 0.366);
     --background-modifier-border: var(--border-size) solid #6e72796d;
     --code-background: #2f3039;
@@ -830,8 +860,8 @@ body.titlebar-vintage-style .titlebar .mod-minimize:hover {
     --scrollbar-bg: #d9d3f7;
     --scrollbar-thumb-bg: #a9bdc64e;
     --panel-border-color: #dbdbdc;
-    --hr-color:#6e72796d;
-    --table-border-color:#6e72796d;
+    --hr-color: #6e72796d;
+    --table-border-color: #6e72796d;
 }
 
 .theme-light {
@@ -877,8 +907,8 @@ body.titlebar-vintage-style .titlebar .mod-minimize:hover {
     --scrollbar-bg: #F7EED3;
     --scrollbar-thumb-bg: #c6bfa94e;
     --panel-border-color: #dbdbdc;
-    --hr-color:#796e6e47;
-    --table-border-color:#796e6e47;
+    --hr-color: #796e6e47;
+    --table-border-color: #796e6e47;
 }
 
 
@@ -899,35 +929,33 @@ body.titlebar-vintage-style .titlebar .mod-minimize:hover {
 }
 
 
-.workspace-leaf-content[data-type='file-explorer'], [data-type='search'], [data-type='bookmarks']  {
-    margin-bottom: 29px;  
+.workspace-leaf-content[data-type='file-explorer'],
+[data-type='search'],
+[data-type='bookmarks'] {
+    margin-bottom: 29px;
 }
 
 .theme-light .workspace,
 .theme-dark .workspace {
     background-color: var(--background-primary);
     display: flex;
-    font-family: var(--font-family);
-}
-
-.workspace-split.mod-horizontal,
-.mod-root .workspace-leaf {
-    margin: 9px;
 }
 
 .workspace-leaf-content {
     border: var(--background-modifier-border);
     margin-bottom: 13px;
-
-    
 }
 
 .workspace-tabs .workspace-leaf {
     background-color: var(--background-primary);
 }
 
-.mod-root .workspace-leaf {
-    margin: 5px 20px;
+/* .mod-root .workspace-leaf {
+    margin: 5px;
+} */
+
+.workspace-tab-container {
+    margin: 1px 10px 17px;
 }
 
 .workspace-tabs .workspace-leaf .view-content,
@@ -937,8 +965,7 @@ body.titlebar-vintage-style .titlebar .mod-minimize:hover {
     background-color: var(--background-secondary);
 }
 
-
-/* Tab */
+/* I didn't send the label to daud for advice because I previously sent the label design to Daud for feedback, so I don't think I need to keep asking him for advice on the same design,  */
 
 
 .workspace-tab-header.is-active {
@@ -957,7 +984,6 @@ body.titlebar-vintage-style .titlebar .mod-minimize:hover {
 }
 
 
-
 .theme-dark .workspace-tab-header-container:not(.workspace-split) {
     align-items: center;
     position: relative;
@@ -966,12 +992,12 @@ body.titlebar-vintage-style .titlebar .mod-minimize:hover {
     background-color: var(--accent-color-bg_d);
 }
 
-.workspace .mod-root .workspace-tab-header{
+.workspace .mod-root .workspace-tab-header {
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.workspace .mod-root .workspace-tab-header:hover{
+.workspace .mod-root .workspace-tab-header:hover {
     transform: translateY(5px);
 }
 
@@ -987,22 +1013,23 @@ body.titlebar-vintage-style .titlebar .mod-minimize:hover {
     margin: 0 2.5px 5px 2.5px;
 }
 
-.workspace .mod-root .workspace-tab-header .workspace-tab-header-inner-close-button{
+.workspace .mod-root .workspace-tab-header .workspace-tab-header-inner-close-button {
     display: none;
 }
 
-.workspace .mod-root .workspace-tab-header-inner-title{
+.workspace .mod-root .workspace-tab-header-inner-title {
     padding-top: 3px;
 }
 
-.workspace-tab-header-tab-list .clickable-icon, .workspace-tab-header-new-tab .clickable-icon{
+.workspace-tab-header-tab-list .clickable-icon,
+.workspace-tab-header-new-tab .clickable-icon {
     background-color: var(--background-secondary);
     border-radius: 50%;
     border: var(--background-modifier-border);
 }
 
 
-.workspace-tab-header-tab-list .clickable-icon{
+.workspace-tab-header-tab-list .clickable-icon {
     background-color: var(--background-secondary);
     border-radius: 50%;
     border: var(--background-modifier-border);
@@ -1037,7 +1064,6 @@ body.titlebar-vintage-style .titlebar .mod-minimize:hover {
 .view-header-nav-buttons .clickable-icon {
     border: var(--background-modifier-border);
     border-radius: var(--border-radius);
-
 }
 
 .view-header-title-container {
@@ -1064,31 +1090,75 @@ body.titlebar-vintage-style .titlebar .mod-minimize:hover {
     background-color: var(--background-secondary);
 }
 
-.nav-files-container .tree-item{
+.nav-files-container .tree-item {
     transition: all 0.3s ease;
-    
 }
 
 
-.nav-files-container .tree-item:hover{
+.nav-files-container .tree-item:hover {
     transform: translateX(4px);
 }
 
-.nav-file-title-content, .nav-folder-title-content{
+.nav-file-title-content,
+.nav-folder-title-content {
     padding: 1px;
+
 }
 
-.nav-file-tag{
+.nav-file-tag {
     padding: 1px 5px;
     text-align: center;
     line-height: 2;
- 
+
 }
-body:not(.is-grabbing) .nav-file-title.is-active:hover, body:not(.is-grabbing) .nav-folder-title.is-active:hover, .nav-file-title.is-active, .nav-folder-title.is-active {
+
+.nav-buttons-container {
+    justify-content: flex-start;
+}
+
+
+.tree-item-self .tree-item-icon {
+    display: none;
+}
+
+.nav-folder.is-collapsed .nav-folder-title .nav-folder-title-content::before {
+    mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22 0%200%20256%20256%22%3E%3Cpath%20d%3D%22M216%2C72H131.31L104%2C44.69A15.86%2C15.86%2C0%2C0%2C0%2C92.69%2C40H40A16%2C16%2C0%2C0%2C0%2C24%2C56V200.62A15.4%2C15.4%2C0%2C0%2C0%2C39.38%2C216H216.89A15.13%2C15.13%2C0%2C0%2C0%2C232%2C200.89V88A16%2C16%2C0%2C0%2C0%2C216%2C72ZM40%2C56H92.69l16%2C16H40ZM216%2C200H40V88H216Z%22%2F%3E%3C%2Fsvg%3E");
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.nav-folder.is-collapsed .nav-folder-title .nav-folder-title-content::before,
+.nav-folder .nav-folder-title .nav-folder-title-content::before {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    background-repeat: no-repeat;
+    vertical-align: -3px;
+    background-color: var(--icon-color);
+    opacity: 70%;
+
+}
+
+.nav-folder .nav-folder-title .nav-folder-title-content::before {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: 10px;
+    content: "";
+    font-size: 1rem;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' viewBox='0 0 256 256'%3E%3Cpath d='M245,110.64A16,16,0,0,0,232,104H216V88a16,16,0,0,0-16-16H130.67L102.94,51.2a16.14,16.14,0,0,0-9.6-3.2H40A16,16,0,0,0,24,64V208h0a8,8,0,0,0,8,8H211.1a8,8,0,0,0,7.59-5.47l28.49-85.47A16.05,16.05,0,0,0,245,110.64ZM93.34,64,123.2,86.4A8,8,0,0,0,128,88h72v16H69.77a16,16,0,0,0-15.18,10.94L40,158.7V64Zm112,136H43.1l26.67-80H232Z'/%3E%3C/svg%3E");
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+body:not(.is-grabbing) .nav-file-title.is-active:hover,
+body:not(.is-grabbing) .nav-folder-title.is-active:hover,
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
     padding: 5px;
     cursor: pointer;
     border: var(--background-modifier-border);
- 
+
 }
 
 .workspace-split.mod-horizontal {
@@ -1096,7 +1166,7 @@ body:not(.is-grabbing) .nav-file-title.is-active:hover, body:not(.is-grabbing) .
     padding: 6px;
 }
 
-body.workspace-ribbon{
+body.workspace-ribbon {
     padding: 10px;
 }
 
@@ -1125,7 +1195,10 @@ body.workspace-ribbon{
     border: var(--background-modifier-border);
 }
 
-.mod-left-split .workspace-tab-header.has-active-menu, .mod-right-split .workspace-tab-header.has-active-menu, .mod-left-split .workspace-tab-header.is-active, .mod-right-split .workspace-tab-header.is-active{
+.mod-left-split .workspace-tab-header.has-active-menu,
+.mod-right-split .workspace-tab-header.has-active-menu,
+.mod-left-split .workspace-tab-header.is-active,
+.mod-right-split .workspace-tab-header.is-active {
     background-color: var(--background-secondary);
 }
 
@@ -1146,7 +1219,7 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 
 }
 
-.workspace-leaf-resize-handle{
+.workspace-leaf-resize-handle {
     border: none;
     opacity: 0;
     background-color: transparent;
@@ -1154,9 +1227,9 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 
 }
 
-.workspace-leaf-resize-handle:hover{
-        background-color: var;
-        opacity: 1;
+.workspace-leaf-resize-handle:hover {
+    background-color: var;
+    opacity: 1;
 }
 
 .is-hidden-frameless:not(.is-fullscreen) .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
@@ -1240,14 +1313,10 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 }
 
 
-
-
-
 /* Menu */
 
 .menu {
     border-radius: var(--background-modifier-border);
-    ;
     box-shadow: none;
     overflow: hidden;
 }
@@ -1347,6 +1416,11 @@ input[type='password'],
 input[type='number'] {
     border: var(--background-modifier-border);
     background-color: var(--background-primary);
+}
+
+button:not(.clickable-icon) {
+    background-color: var(--background-secondary);
+    color: var(--text-normal);
 }
 
 .style-settings-heading {
