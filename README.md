@@ -15,8 +15,7 @@ A sleek and minimalist Obsidian theme designed for those who appreciate clean li
 
 ## Style Settings
 
-It is highly recommended to install the Style Settings plugin, which allows you to change the theme and customize various settings. Please note that this is still in development.
-
+ highly recommended to install the Style Settings plugin, which allows you to change the theme and customize various settings. 
 
 
 
