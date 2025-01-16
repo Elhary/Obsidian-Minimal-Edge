@@ -136,7 +136,7 @@ settings:
     description: Font family for all headings
     type: variable-text
     default: ""
-    quotes: true
+  
 
   -
     id: advanced-heading-settings
@@ -158,7 +158,6 @@ settings:
     description: Font family for H1
     type: variable-text
     default: ""
-    quotes: true
 
   -
     id: h2-color
@@ -173,7 +172,6 @@ settings:
     description: Font family for H2
     type: variable-text
     default: ""
-    quotes: true
 
   -
     id: h3-color
@@ -188,7 +186,6 @@ settings:
     description: Font family for H3
     type: variable-text
     default: ""
-    quotes: true
 
   -
     id: h4-color
@@ -203,7 +200,6 @@ settings:
     description: Font family for H4
     type: variable-text
     default: ""
-    quotes: true
 
   -
     id: h5-color
@@ -218,7 +214,6 @@ settings:
     description: Font family for H5
     type: variable-text
     default: ""
-    quotes: true
 
   -
     id: h6-color
@@ -233,7 +228,6 @@ settings:
     description: Font family for H6
     type: variable-text
     default: ""
-    quotes: true
 
   -
 
@@ -664,62 +658,76 @@ body {
 
 
 /* Basic heading styles */
-
 body.heading-style-basic .markdown-preview-view h1,
 body.heading-style-basic .markdown-preview-view h2,
 body.heading-style-basic .markdown-preview-view h3,
 body.heading-style-basic .markdown-preview-view h4,
 body.heading-style-basic .markdown-preview-view h5,
 body.heading-style-basic .markdown-preview-view h6,
-body.heading-style-basic .cm-header {
-    color: var(--heading-color);
-    font-family: var(--custom-heading-font, inherit);
+body.heading-style-basic .cm-header-1,
+body.heading-style-basic .cm-header-2,
+body.heading-style-basic .cm-header-3,
+body.heading-style-basic .cm-header-4,
+body.heading-style-basic .cm-header-5,
+body.heading-style-basic .cm-header-6 {
+    color: var(--heading-color) !important;
+    font-family: var(--custom-heading-font) !important;
 }
 
 /* Advanced heading styles */
 /* H1 */
 body.heading-style-advanced .markdown-preview-view h1,
 body.heading-style-advanced .cm-header-1 {
-    color: var(--h1-color);
-    font-family: var(--custom-h1-font, inherit);
+    color: var(--h1-color) !important;
+    font-family: var(--custom-h1-font) !important;
 }
 
 /* H2 */
 body.heading-style-advanced .markdown-preview-view h2,
 body.heading-style-advanced .cm-header-2 {
-    color: var(--h2-color);
-    font-family: var(--custom-h2-font, inherit);
+    color: var(--h2-color) !important;
+    font-family: var(--custom-h2-font) !important;
 }
 
 /* H3 */
 body.heading-style-advanced .markdown-preview-view h3,
 body.heading-style-advanced .cm-header-3 {
-    color: var(--h3-color);
-    font-family: var(--custom-h3-font, inherit);
+    color: var(--h3-color) !important;
+    font-family: var(--custom-h3-font) !important;
 }
 
 /* H4 */
 body.heading-style-advanced .markdown-preview-view h4,
 body.heading-style-advanced .cm-header-4 {
-    color: var(--h4-color);
-    font-family: var(--custom-h4-font, inherit);
+    color: var(--h4-color) !important;
+    font-family: var(--custom-h4-font) !important;
 }
 
 /* H5 */
 body.heading-style-advanced .markdown-preview-view h5,
 body.heading-style-advanced .cm-header-5 {
-    color: var(--h5-color);
-    font-family: var(--custom-h5-font, inherit);
+    color: var(--h5-color) !important;
+    font-family: var(--custom-h5-font) !important;
 }
 
 /* H6 */
 body.heading-style-advanced .markdown-preview-view h6,
 body.heading-style-advanced .cm-header-6 {
-    color: var(--h6-color);
-    font-family: var(--custom-h6-font, inherit);
+    color: var(--h6-color) !important;
+    font-family: var(--custom-h6-font) !important;
 }
 
-
+/* Reset styles when none is selected */
+body.heading-style-none .markdown-preview-view h1,
+body.heading-style-none .markdown-preview-view h2,
+body.heading-style-none .markdown-preview-view h3,
+body.heading-style-none .markdown-preview-view h4,
+body.heading-style-none .markdown-preview-view h5,
+body.heading-style-none .markdown-preview-view h6,
+body.heading-style-none .cm-header {
+    color: inherit;
+    font-family: inherit;
+}
 
 
 
@@ -1701,6 +1709,7 @@ button:not(.clickable-icon) {
     padding:  10px;
     border-radius: 10px;
     margin-bottom: 10px;
+
 }
 .setting-item-name, .setting-item-description{
   margin-left: 19px;
