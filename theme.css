@@ -76,6 +76,7 @@ settings:
     id: titlebar-button-style
     title: Titlebar Button Style
     type: class-select
+    description: change titlebar style(windows only)
     allowEmpty: false
     default: titlebar-default-style
     options:
@@ -91,11 +92,30 @@ settings:
       - 
         label: Vintage 
         value: titlebar-vintage-style
+  - 
+        id: file-explorer-icons-heading
+        title: File Explorer Icons
+        type: heading
+        level: 4
+        collapsed: false
   -
+        id: hide-folder-icons
+        title: Hide Folder Icons
+        description: Toggle visibility of folder icons in the file explorer
+        type: class-toggle
+        default: false
+  -
+        id: hide-file-icons
+        title: Hide File Icons
+        description: Toggle visibility of file icons in the file explorer
+        type: class-toggle
+        default: false
+  -
+
     id: heading-styles
     title: Heading Styles
     type: heading
-    level: 2
+    level: 4
     collapsed: true
 
   -
@@ -119,7 +139,7 @@ settings:
     id: basic-heading-settings
     title: Basic Heading Settings
     type: heading
-    level: 3
+    level: 5
     collapsed: true
 
   -
@@ -142,7 +162,7 @@ settings:
     id: advanced-heading-settings
     title: Advanced Heading Settings
     type: heading
-    level: 3
+    level: 5
     collapsed: true
 
   -
@@ -492,6 +512,7 @@ body.theme-dark.vintage-theme .nav-file-tag {
 }
 
 
+/* hI i have
 
 /* Defualt Style */
 
@@ -1056,6 +1077,15 @@ body.titlebar-vintage-style .titlebar .mod-minimize:hover {
     background-color: #c6ffe4;
 }
 
+/* Hide folder icons when disabled */
+body.hide-folder-icons .nav-folder .nav-folder-title .nav-folder-title-content::before,
+body.hide-folder-icons .nav-folder.is-collapsed .nav-folder-title .nav-folder-title-content::before {
+    display: none;
+}
+
+body.hide-file-icons .nav-file .nav-file-title .nav-file-title-content::before {
+    display: none;
+}
 
 /* default theme styling */
 
@@ -1363,6 +1393,8 @@ body.titlebar-vintage-style .titlebar .mod-minimize:hover {
     display: none;
 }
 
+/* closed folder Icon */
+
 .nav-folder.is-collapsed .nav-folder-title .nav-folder-title-content::before {
     mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22 0%200%20256%20256%22%3E%3Cpath%20d%3D%22M216%2C72H131.31L104%2C44.69A15.86%2C15.86%2C0%2C0%2C0%2C92.69%2C40H40A16%2C16%2C0%2C0%2C0%2C24%2C56V200.62A15.4%2C15.4%2C0%2C0%2C0%2C39.38%2C216H216.89A15.13%2C15.13%2C0%2C0%2C0%2C232%2C200.89V88A16%2C16%2C0%2C0%2C0%2C216%2C72ZM40%2C56H92.69l16%2C16H40ZM216%2C200H40V88H216Z%22%2F%3E%3C%2Fsvg%3E");
     mask-repeat: no-repeat;
@@ -1380,6 +1412,8 @@ body.titlebar-vintage-style .titlebar .mod-minimize:hover {
     opacity: 70%;
 
 }
+
+/* opened folder Icon */
 
 .nav-folder .nav-folder-title .nav-folder-title-content::before {
     display: inline-block;
@@ -1403,19 +1437,18 @@ body.titlebar-vintage-style .titlebar .mod-minimize:hover {
   opacity: 60%;
 }
 
-
-
+/* File Icon */
 
 .nav-file .nav-file-title-content:before {
-	content: "";
-	position: relative;
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' viewBox='0 0 256 256'%3E%3Cpath d='M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z'/%3E%3C/svg%3E");
-  mask-repeat: no-repeat;
-  mask-position: center;
-	display: inline-block;
-	margin-right: 4px;
-	height: 14px;
-	width: 14px;
+   content: "";
+   position: relative;
+   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' viewBox='0 0 256 256'%3E%3Cpath d='M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z'/%3E%3C/svg%3E");
+   mask-repeat: no-repeat;
+   mask-position: center;
+   display: inline-block;
+   margin-right: 4px;
+   height: 14px;
+   width: 14px;
 }
 
 body:not(.is-grabbing) .nav-file-title.is-active:hover,
