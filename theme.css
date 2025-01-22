@@ -908,6 +908,15 @@ body.ribbon-edge-style .workspace-ribbon .sidebar-toggle-button {
     border-radius: 0;
 }
 
+.sidebar-toggle-button.mod-right{
+    background-color: var(--background-primary);
+}
+
+body.is-focused .sidebar-toggle-button, body.is-focused .workspace-tabs.mod-top{
+    background-color: var(--background-primary);
+}
+
+
 body.ribbon-edge-style .side-dock-settings,
 body.ribbon-edge-style .side-dock-actions {
     margin-top: 95px;
@@ -1123,6 +1132,7 @@ body.hide-file-icons .nav-file .nav-file-title .nav-file-title-content::before {
     --text-highlight-bg: rgba(255, 255, 0, 0.4);
     --text-selection: rgba(0, 122, 255, 0.15);
     --text-on-accent: #f2f2f2;
+    --titlebar-background-focused:#20242b;
     --icon-color: #59607b;
     --interactive-normal: #dae1ef;
     --interactive-hover: #dbdbdc;
@@ -1170,6 +1180,7 @@ body.hide-file-icons .nav-file .nav-file-title .nav-file-title-content::before {
     --text-highlight-bg: rgba(84, 84, 56, 0.4);
     --text-selection: rgba(0, 122, 255, 0.15);
     --text-on-accent: #f2f2f2;
+    --titlebar-background-focused:#e4ddd3;
     --icon-color: #705757;
     --interactive-normal: #eaeaeb;
     --interactive-hover: #dbdbdc;
