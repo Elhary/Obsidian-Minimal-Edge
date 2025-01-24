@@ -29,26 +29,6 @@ settings:
         value: vintage-theme 
 
   - 
-    id: titlebar-button-style
-    title: Titlebar Button Style
-    type: class-select
-    allowEmpty: false
-    default: titlebar-default-style
-    options:
-      - 
-        label: Default 
-        value: titlebar-default-style
-      - 
-        label: Minimal 
-        value: titlebar-minimal-style
-      - 
-        label: Retro 
-        value: titlebar-retro-style
-      - 
-        label: Vintage 
-        value: titlebar-vintage-style
-
-  - 
     id: font-style
     title: Body Text Font
     description: Choose the font family for your main text
